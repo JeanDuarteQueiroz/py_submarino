@@ -102,3 +102,5 @@ def gera_evento():
         else:
             gasto = random.randint(dano_min, dano_max)
             return True, descricao, tipo, gasto
+    else:
+        return False, "Nada de mais ocorreu", "nenhum", 0
