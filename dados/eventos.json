@@ -1,0 +1,26 @@
+{
+    "ataque_lula_gigante": {
+        "descricao": "Você foi atacado por uma lula gigante! A integridade do casco foi afetada!",
+        "tipo": "integridade_casco",
+        "dano_min": 15,
+        "dano_max": 30
+    },
+    "correnteza_submarina": {
+        "descricao": "O submarino entrou em uma corrente submarina! Você precisou forçar os motores e isso consumiu mais bateria!",
+        "tipo": "bateria",        
+        "dano_min": 10,
+        "dano_max": 20
+    },
+    "vazamento_gas": {
+        "descricao": "Você identificou um vazamento de gás! Um pouco do precioso Oxigênio foi perdido",
+        "tipo": "oxigenio",
+        "dano_min": 5,
+        "dano_max": 10
+    },
+    "aguas_calmas": {
+        "descricao": "Águas calmas a vista! Sua descida ocorre sem penalidades!",
+        "tipo": "nenhum",
+        "dano_min": 0,
+        "dano_max": 0
+    }
+}
