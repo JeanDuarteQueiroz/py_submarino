@@ -5,6 +5,8 @@ import time
 import random
 import json
 
+ARQUIVO_RECORDES = "dados/recordes.json"
+
 with open("dados/nomes_submarino.json", "r", encoding="utf-8") as arquivo:
     dados_submarino = json.load(arquivo)
     

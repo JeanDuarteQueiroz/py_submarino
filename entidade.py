@@ -2,7 +2,7 @@ from random import randint
 import json
 import os
 
-ARQUIVO_RECORDES = "dados/recordes.json"
+
 
 class Submarino():
     def __init__( self, id, nome: str, comandante: str):

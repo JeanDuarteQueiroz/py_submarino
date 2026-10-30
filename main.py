@@ -41,22 +41,22 @@ def main():
                     submarino.oxigenio = max(0, submarino.oxigenio - dano)
                     print(descricao)
                     print(f"Seu oxigênio teve {dano}% de redução")
-                    time.sleep(2)
+                    time.sleep(2.5)
                 elif tipo == "bateria":
                     submarino.bateria = max(0, submarino.bateria - dano)
                     print(descricao)
                     print(f"Sua bateria teve {dano}% de redução!")
-                    time.sleep(2)
+                    time.sleep(2.5)
                 elif tipo == "integridade_casco":
                     submarino.integridade_casco = max(0, submarino.integridade_casco - dano)
                     print(f"Seu casco sofreu {dano}% de avaria!")
-                    time.sleep(2)
+                    time.sleep(2.5)
                 else:
                     print("Tipo desconhecido!")
-                    time.sleep(2)
+                    time.sleep(2.5)
             else:
                 print(descricao)
-                time.sleep(2)
+                time.sleep(2.5)
                 
         elif op == 2:
             if submarino.integridade_casco >= 100:
@@ -64,14 +64,14 @@ def main():
             else:
                 reparo, gasto = submarino.fazer_reparos()
                 print(f"Você reparou {reparo}% do casco! Mas gastou {gasto}% da bateria nesse processo.")
-            time.sleep(1)
+            time.sleep(2.5)
         elif op == 3:
             if submarino.bateria >= 100:
                 print("A bateria totalmente carregada!")
             else:
                 recarga, gasto = submarino.desligar_motores()
                 print(f"Você recarregou {recarga}% de bateria! Mas gastou {gasto}% de oxigênio aguardando o processo.")
-            time.sleep(1)
+            time.sleep(2.5)
         else:
             limpa_tela()
             print("Escolha a opção válida!")
