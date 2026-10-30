@@ -1,4 +1,4 @@
-from interface import cria_jogador, aguarda_jogador, limpa_tela
+from interface import cria_jogador, aguarda_jogador, limpa_tela, gera_evento
 from entidade import Submarino
 import time
 
@@ -34,6 +34,29 @@ def main():
             progressao += progresso
             print(f"Você desceu... - {gasto_oxigenio}% de oxigênio e - {gasto_bateria}% de bateria.")
             time.sleep(1)
+            tem_evento, descricao, tipo, dano = gera_evento()
+            if tem_evento == True:
+                if tipo == "oxigenio":
+                    submarino.oxigenio = max(0, submarino.oxigenio - dano)
+                    print(descricao)
+                    print(f"Seu oxigênio teve {dano}% de redução")
+                    time.sleep(2)
+                elif tipo == "bateria":
+                    submarino.bateria = max(0, submarino.bateria - dano)
+                    print(descricao)
+                    print(f"Sua bateria teve {dano}% de redução!")
+                    time.sleep(2)
+                elif tipo == "integridade_casco":
+                    submarino.integridade_casco = max(0, submarino.integridade_casco - dano)
+                    print(f"Seu casco sofreu {dano}% de avaria!")
+                    time.sleep(2)
+                else:
+                    print("Tipo desconhecido!")
+                    time.sleep(2)
+            else:
+                print(descricao)
+                time.sleep(2)
+                
         elif op == 2:
             if submarino.integridade_casco >= 100:
                 print("A integridade do está perfeita!")
