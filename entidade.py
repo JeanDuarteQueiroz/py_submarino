@@ -1,4 +1,8 @@
 from random import randint
+import json
+import os
+
+ARQUIVO_RECORDES = "dados/recordes.json"
 
 class Submarino():
     def __init__( self, id, nome: str, comandante: str):
@@ -40,20 +44,15 @@ class Submarino():
         print("-"*20)
         print("TRIPULANTES:")
         print()
-        print(f"Controlador: {self.tripulantes.get("controlador", "Desocupado")}")
-        print(f"Analista: {self.tripulantes.get("analista", "Desocupado")}")
-        print(f"Mecânico: {self.tripulantes.get("mecanico", "Desocupado")}")
+        print(f"Controlador: {self.tripulantes.get('controlador', 'Desocupado')}")
+        print(f"Analista: {self.tripulantes.get('analista', 'Desocupado')}")
+        print(f"Mecânico: {self.tripulantes.get('mecanico', 'Desocupado')}")
         print("-"*20)
         print()
         
     def descer_mais_fundo(self, progresso):
-        if progresso <= 500:
-            gasto_oxigenio = 0   
-            gasto_bateria = 0
-            progresso = randint(500, 1200) 
-            return progresso, gasto_oxigenio, gasto_bateria
-        
-        progresso = randint(200, 1000) 
+
+        progresso = randint(500, 1200) 
         
         gasto_oxigenio = randint(2,7)    
         gasto_bateria = randint(1,5)

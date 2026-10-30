@@ -104,3 +104,47 @@ def gera_evento():
             return True, descricao, tipo, gasto
     else:
         return False, "Nada de mais ocorreu", "nenhum", 0
+    
+def salvar_recorde(nome_comandante, turnos):
+        recordes = []
+        
+        # 1. Lê os dados existentes, se o arquivo já existir
+        if os.path.exists(ARQUIVO_RECORDES):
+            with open(ARQUIVO_RECORDES, "r", encoding="utf-8") as arquivo:
+                try:
+                    recordes = json.load(arquivo)
+                except json.JSONDecodeError:
+                    recordes = [] # Previne erro se o arquivo existir mas estiver vazio
+                    
+        # 2. Adiciona a nova pontuação
+        recordes.append({
+            "comandante": nome_comandante, 
+            "turnos": turnos
+        })
+        
+        # 3. Ordena a lista do menor para o maior número de turnos
+        # A função lambda diz ao Python para usar o valor da chave "turnos" como critério de ordenação
+        recordes.sort(key=lambda x: x["turnos"])
+        
+        # (Opcional) Mantém apenas o Top 5 para o arquivo não crescer infinitamente
+        recordes = recordes[:5]
+        
+        # 4. Salva os dados ordenados de volta no arquivo
+        with open(ARQUIVO_RECORDES, "w", encoding="utf-8") as arquivo:
+            json.dump(recordes, arquivo, indent=4, ensure_ascii=False)
+
+def exibir_top_3():
+        if not os.path.exists(ARQUIVO_RECORDES):
+            return
+            
+        with open(ARQUIVO_RECORDES, "r", encoding="utf-8") as arquivo:
+            recordes = json.load(arquivo)
+            
+        print("\n" + "="*30)
+        print("🏆 TOP 3 COMANDANTES 🏆")
+        print("="*30)
+        
+        # Pega apenas os 3 primeiros da lista
+        for i, recorde in enumerate(recordes[:3]):
+            print(f"{i+1}º Lugar: Cmdt. {recorde['comandante']} - {recorde['turnos']} turnos")
+        print("="*30 + "\n")

@@ -1,4 +1,4 @@
-from interface import cria_jogador, aguarda_jogador, limpa_tela, gera_evento
+from interface import cria_jogador, aguarda_jogador, limpa_tela, gera_evento, salvar_recorde, exibir_top_3
 from entidade import Submarino
 import time
 
@@ -9,11 +9,12 @@ def main():
     submarino.exibe_ficha()
     aguarda_jogador()
     
+    turnos = 0
     progressao = 0
     progressao_fim = 11000
     
     while True:
-        
+        turnos += 1
         limpa_tela()
         print(f"Progresso atual: {progressao}")
         print(f"Recursos: \nOxigênio: {submarino.oxigenio}%\nBateria: {submarino.bateria}%\nIntegridade do Casco: {submarino.integridade_casco}%")
@@ -86,8 +87,15 @@ def main():
         if progressao >= progressao_fim:
             limpa_tela()
             print("Parabéns Comandante! Você conseguiu explorar a fossa oceânica!")
+            
+            # Salva o recorde e exibe o placar
+            salvar_recorde(submarino.comandante, turnos)
+            exibir_top_3()
+            
             time.sleep(1)
             break
+    
+        
         
 if __name__ == "__main__":
     main()
