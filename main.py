@@ -11,7 +11,7 @@ def main():
     
     turnos = 0
     progressao = 0
-    progressao_fim = 11000
+    progressao_fim = 200
     
     while True:
         turnos += 1

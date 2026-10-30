@@ -23,7 +23,7 @@ def aguarda_jogador():
 def limpa_tela():
     os.system('cls' if os.name == "nt" else "clear")
 
-def maquina_escrever(texto: str, atraso: float = 0.05, quebrar_linha: bool = True):
+def maquina_escrever(texto: str, atraso: float = 0.02, quebrar_linha: bool = True):
     for caractere in texto:
         sys.stdout.write(caractere)
         sys.stdout.flush()
@@ -33,6 +33,7 @@ def maquina_escrever(texto: str, atraso: float = 0.05, quebrar_linha: bool = Tru
         print()
 
 def cria_jogador():
+    limpa_tela()
     maquina_escrever("Gerando novo protocólo Abys...")
     time.sleep(1)
     maquina_escrever("Iniciando protocólo...")
@@ -90,7 +91,7 @@ def gera_evento():
     chance_evento = random.randint(1,100)
     chaves = list(dados_eventos.keys())
     
-    if chance_evento <= 25:
+    if chance_evento <= 50:
         evento = random.choice(chaves)
         
         descricao = dados_eventos[evento]["descricao"]
@@ -100,7 +101,7 @@ def gera_evento():
         
         if tipo == "nenhum":
             gasto = 0
-            return True, descricao, tipo, gasto
+            return False, descricao, tipo, gasto
         else:
             gasto = random.randint(dano_min, dano_max)
             return True, descricao, tipo, gasto

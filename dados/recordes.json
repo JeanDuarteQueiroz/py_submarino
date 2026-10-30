@@ -1,6 +1,14 @@
 [
     {
+        "comandante": "Dev",
+        "turnos": 1
+    },
+    {
         "comandante": "Jean Duarte Queiroz",
         "turnos": 13
+    },
+    {
+        "comandante": "Jean D.",
+        "turnos": 14
     }
 ]
