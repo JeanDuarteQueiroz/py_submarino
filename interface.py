@@ -16,9 +16,7 @@ with open("dados/nomes_tripulantes.json", "r", encoding="utf-8") as arquivo:
 with open("dados/eventos.json", "r", encoding="utf-8") as arquivo:
     dados_eventos = json.load(arquivo)
 
-def aguarda_jogador():
-    input("Digite [ENTER] para continuar...")
-    return
+
 
 def limpa_tela():
     os.system('cls' if os.name == "nt" else "clear")
@@ -66,6 +64,7 @@ def cria_jogador():
             time.sleep(2)
             break
         elif op == 1:
+            print("Importante! O nome não poderá ser trocado!")
             nome_submarino = input("Digite o nome da Embarcação:  ")
             maquina_escrever(". . . . .")
             print()
@@ -84,7 +83,7 @@ def cria_jogador():
     jogador.tripulantes["analista"] = random.choice(dados_tripulantes)
     jogador.tripulantes["mecanico"] = random.choice(dados_tripulantes)
     
-    aguarda_jogador()
+
     return jogador
 
 def gera_evento():

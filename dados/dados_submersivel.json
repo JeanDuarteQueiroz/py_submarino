@@ -1,0 +1,17 @@
+{
+    "comum":{
+        "oxigenio": 100,
+        "bateria": 100,
+        "integridade_casco": 100
+    },
+    "incomum":{
+        "oxigenio": 120,
+        "bateria": 120,
+        "integridade_casco": 120
+    },
+    "raro":{
+        "oxigenio": 150,
+        "bateria": 150,
+        "integridade_casco": 150
+    }
+}
