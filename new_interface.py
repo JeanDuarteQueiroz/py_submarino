@@ -55,6 +55,54 @@ def exibir_ranking(x: int = 3):
 #------------------------------------------#
 #----------------| JOGADOR |---------------#  
 
+def usar_item(jogador, id_digitado):
+
+    chave_encontrada = None
+    
+    # Varrer o dicionário para encontrar qual chave possui o ID digitado
+    for chave, dados in jogador.itens.items():
+        if dados["id"] == id_digitado:
+            chave_encontrada = chave
+            break
+
+    # Se o ID existir no dicionário
+    if chave_encontrada:
+        item = jogador.itens[chave_encontrada]
+        
+        # Verifica se ainda há unidades disponíveis
+        if item["quantidade"] > 0:
+            item["quantidade"] -= 1 # Consome 1 unidade
+            
+            # Aplica a lógica do bônus (Exemplo)
+            print(f"\n> Você consumiu 1x {item['nome']}.")
+            print(f"> +{item['bonus']} adicionado aos seus níveis de {item['tipo']}!")
+            time.sleep(2)
+            if item['tipo'] == "oxigenio":
+                jogador.submersivel["oxigenio"]  = min(100, jogador.submersivel["oxigenio"] + (item['bonus'])) # ADICIONAR HABILIDADE DE TRIPULANTE QUE AUMENTA A CARGA PADRÃO
+        else:
+            print("\n> Você não tem mais unidades deste item.")
+            time.sleep(2)
+    else:
+        print("\n> ID não encontrado no inventário.")
+        time.sleep(2)
+        
+def exibir_inventario(jogador):
+    print("=== SEU INVENTÁRIO ===")
+    tem_itens = False
+    
+    for chave, dados in jogador.itens.items():
+        if dados["quantidade"] > 0:
+            print(f"[{dados['id']}] {dados['nome']} (Qtd: {dados['quantidade']}) - {dados['descricao']}")
+            tem_itens = True
+            
+    if not tem_itens:
+        print("Seu inventário está vazio.")
+    
+    print("\n\nImportante! Se informar um número errado, perderá o turno!")
+    id_item = input("Digite o número do item ou 0, para não usar: ")
+    
+    return id_item
+
 def gerar_submersivel_jogador(comandante, nome_submersivel):
     
     qualidade_tripulante = random.choices(QUALIDADE, weights=[9.7, 0.2, 0.1], k=1)
@@ -89,6 +137,9 @@ def gerar_submersivel_jogador(comandante, nome_submersivel):
     return jogador
    
 def inicia_novo_jogo():
+    
+    
+    
     limpa_tela()
     maquina_escreve("Gerando um novo protocólo de missão. . .")
     time.sleep(1.5)
