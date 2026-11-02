@@ -7,9 +7,13 @@ from new_entidade import Submersivel
 
 ARQUIVO_RECORDES = "dados/recordes.json"
 QUALIDADE = "comum", "incomum", "raro"
+DIFICULDADE_MISSAO = "FACIL", "MEDIA", "DIFICIL"
+
+with open("dados/nomes_submarino.json", "r", encoding="utf-8") as arquivo:
+    nomes_submersivel = json.load(arquivo)
 
 with open("dados/dados_submersivel.json", "r", encoding="utf-8") as arquivo:
-    dados_submersivel = json.load(arquivo)
+    atributos_submersivel = json.load(arquivo)
     
 with open("dados/dados_tripulantes.json", "r", encoding="utf-8") as arquivo:
     dados_tripulantes = json.load(arquivo)
@@ -108,7 +112,7 @@ def gerar_submersivel_jogador(comandante, nome_submersivel):
     qualidade_tripulante = random.choices(QUALIDADE, weights=[9.7, 0.2, 0.1], k=1)
     qualidade_submersivel = random.choices(QUALIDADE, weights=[9.7, 0.2, 0.1], k=1)    
 
-    atributos_base = dados_submersivel.get(qualidade_submersivel[0])
+    atributos_base = atributos_submersivel.get(qualidade_submersivel[0])
 
     tripulantes = {}
 
@@ -136,7 +140,7 @@ def gerar_submersivel_jogador(comandante, nome_submersivel):
 
     return jogador
    
-def inicia_novo_jogo():
+def iniciar_novo_jogo():
     
     
     
@@ -145,8 +149,8 @@ def inicia_novo_jogo():
     time.sleep(1.5)
     print()
     maquina_escreve("Iniciando o protocólo. . .")
-    time.sleep(1.5)
     print()
+    time.sleep(1.5)
     limpa_tela()
     nome_comandante = input("Digite o nome do Comandante responsável: ")
     time.sleep(1.5)
@@ -168,12 +172,32 @@ def inicia_novo_jogo():
             break
         elif op == "2":
             maquina_escreve("Buscando submersiveis disponíveis. . .")
-            nome_submersivel = random.choice(dados_submersivel)
+            time.sleep(1.5)
+            nome_submersivel = random.choice(nomes_submersivel)
             print()
             maquina_escreve(f"Submersível disbonibilizado para a missão: {nome_submersivel}")
+            time.sleep(1.5)
             break
         else:
             print("Escolha uma opção válida! 1 ou 2\n")
 
     maquina_escreve("\nInformações anexadas ao protocólo. Iniciando missão.")
+    time.sleep(1.5)
     return nome_comandante, nome_submersivel
+
+def iniciar_missao(missao_inicial: bool = False):
+    limpa_tela()
+    dificuldade = ''
+    if missao_inicial == True:
+        maquina_escreve("Comandante, deseja fazer um test drive com a embarcação? (Tutorial)")
+        print()
+        op = input("Digite 'S' ou 'N':  ")
+        if op == 'N':
+            pass
+        elif op == 'S':
+            dificuldade = "inicial"
+            return dificuldade
+    
+    dificuldade = random.choice(DIFICULDADE_MISSAO)
+    
+    return dificuldade

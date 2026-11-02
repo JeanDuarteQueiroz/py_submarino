@@ -4,79 +4,105 @@
             "nacao": "Brasil",
             "nome": "Maria",
             "bonus": 10,
-            "tipo": "oxigenio"
+            "tipo": "oxigenio",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "cecilia": {
             "nacao": "Brasil",
             "nome": "Cecília",
             "bonus": 10,
-            "tipo": "bateria"
+            "tipo": "bateria",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "antonia": {
             "nacao": "Brasil",
             "nome": "Antônia",
             "bonus": 10,
-            "tipo": "integridade_casco"
+            "tipo": "integridade_casco",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "alexandre": {
             "nacao": "Brasil",
             "nome": "Alexandre",
             "bonus": 10,
-            "tipo": "oxigenio"
+            "tipo": "oxigenio",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "antonio": {
             "nacao": "Brasil",
             "nome": "Antônio",
             "bonus": 10,
-            "tipo": "bateria"
+            "tipo": "bateria",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "joao": {
             "nacao": "Brasil",
             "nome": "João",
             "bonus": 10,
-            "tipo": "integridade_casco"
+            "tipo": "integridade_casco",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "arthur": {
             "nacao": "Inglaterra",
             "nome": "Arthur",
             "bonus": 10,
-            "tipo": "oxigenio"
+            "tipo": "oxigenio",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "harry": {
             "nacao": "Inglaterra",
             "nome": "Harry",
             "bonus": 10,
-            "tipo": "bateria"
+            "tipo": "bateria",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "jack": {
             "nacao": "Inglaterra",
             "nome": "Jack",
             "bonus": 10,
-            "tipo": "integridade_casco"
+            "tipo": "integridade_casco",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "mia": {
             "nacao": "Inglaterra",
             "nome": "Mia",
             "bonus": 10,
-            "tipo": "oxigenio"
+            "tipo": "oxigenio",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "olivia": {
             "nacao": "Inglaterra",
             "nome": "Olivia",
             "bonus": 10,
-            "tipo": "integridade_casco"
+            "tipo": "integridade_casco",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "charlie": {
             "nacao": "Inglaterra",
             "nome": "Charlie",
             "bonus": 10,
-            "tipo": "bateria"
+            "tipo": "bateria",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "louis": {
             "nacao": "Franca",
             "nome": "Loius",
             "bonus": 12,
-            "tipo":"integridade_casco"
+            "tipo":"integridade_casco",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         }
     },
     "incomum": {
@@ -84,31 +110,41 @@
             "nacao": "Franca",
             "nome": "Marie",
             "bonus": 20,
-            "tipo":"oxigenio"
+            "tipo":"oxigenio",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "jules": {
             "nacao": "Franca",
             "nome": "Jules",
             "bonus": 20,
-            "tipo":"bateria"
+            "tipo":"bateria",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"            
         },
         "Jean": {
             "nacao": "Franca",
             "nome": "Jean",
             "bonus": 20,
-            "tipo":"integridade_casco"
+            "tipo":"integridade_casco",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!" 
         },
         "pierre": {
             "nacao": "Franca",
             "nome": "Pierre",
             "bonus": 20,
-            "tipo":"oxigenio"
+            "tipo":"oxigenio",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "durant": {
             "nacao": "Franca",
             "nome": "Durant",
             "bonus": 20,
-            "tipo":"bateria"
+            "tipo":"bateria",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         }
     },
     "raro": {
@@ -116,19 +152,25 @@
             "nacao": "Japao",
             "nome": "Kenji",
             "bonus": 30,
-            "tipo": "integridade_casco"
+            "tipo": "integridade_casco",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "hiroshi": {
             "nacao": "Japao",
             "nome": "Hiroshi",
             "bonus": 30,
-            "tipo": "oxigenio"
+            "tipo": "oxigenio",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         },
         "akira": {
             "nacao": "Japao",
             "nome": "Akira",
             "bonus": 30,
-            "tipo": "bateria"
+            "tipo": "bateria",
+            "frase_sucesso": "Boa Comandante! Foi uma ótima exploração!",
+            "frase_fracasso": "É uma pena! Mas, obrigado por jogar Comandante!"
         }
     }
 }

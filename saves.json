@@ -1,0 +1,17 @@
+{
+    "slot_1": {
+        "status": "Vazio",
+        "tripulacao": [],
+        "turno": 0
+    },
+    "slot_2": {
+        "status": "Vazio",
+        "tripulacao": [],
+        "turno": 0
+    },
+    "slot_3": {
+        "status": "Vazio",
+        "tripulacao": [],
+        "turno": 0
+    }
+}
