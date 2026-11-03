@@ -11,9 +11,9 @@ ARQUIVO_SAVE = "saves.json"
 def inicializar_saves():
     if not os.path.exists(ARQUIVO_SAVE):
         dados_iniciais = {
-            "slot_1": {"status": "Vazio", "tripulacao": [], "turno": 0},
-            "slot_2": {"status": "Vazio", "tripulacao": [], "turno": 0},
-            "slot_3": {"status": "Vazio", "tripulacao": [], "turno": 0}
+            "slot_1": {"status": "Vazio", "comandante": '', "submersivel": {},"tripulacao": {}, "missoes_concluidas": [], "turnos_jogados": 0},
+            "slot_2": {"status": "Vazio", "comandante": '', "submersivel": {},"tripulacao": {}, "missoes_concluidas": [], "turnos_jogados": 0},
+            "slot_3": {"status": "Vazio", "comandante": '', "submersivel": {},"tripulacao": {}, "missoes_concluidas": [], "turnos_jogados": 0}
         }
         with open(ARQUIVO_SAVE, 'w', encoding='utf-8') as arquivo:
             json.dump(dados_iniciais, arquivo, indent=4)
@@ -134,6 +134,11 @@ def menu_navegacao(jogador, dificuldade_missao):
         if progressao_final >= progresso:
             limpa_tela()
             maquina_escreve("Você conseguiu Comandante! A Exploração foi um sucesso!")
+            print()
+            for nome, dados in jogador_ativo.tripulantes.items():
+                maquina_escreve(f"[{dados["nome"]}]: {dados["frase_fracasso"]}")
+                time.sleep(1.5)
+            print()
             time.sleep(1.2)
             print()
             maquina_escreve("Armazenando informações da exploração . . .")
